@@ -9,13 +9,21 @@
   <script src="/scripts/controllers/homeController.js"></script>
   <script src="/scripts/controllers/petController.js"></script>
   <script src="/scripts/controllers/addController.js"></script>
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#pet">Pet List</a></li>
-    <li><a href="#add">Add Pet</a></li>
-  </ul>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+       <li><a href="#home">Home</a></li>
+       <li><a href="#pet">Pet List</a></li>
+       <li><a href="#add">Add Pet</a></li>
+     </ul>
+    </div>
+  </div>
+</nav>
   <main ng-view></main>
 </body>
 </html>

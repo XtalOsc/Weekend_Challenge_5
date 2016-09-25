@@ -1,1 +1,8 @@
 <h2>List of Pets</h2>
+<div>
+  <p ng-repeat='pet in pets'>
+    <img class="resize" src="{{pet.url}}">
+    <br>
+    {{pet.pet_species}} named {{ pet.pet_name }} is {{pet.age}} years old
+  </p>
+</div>

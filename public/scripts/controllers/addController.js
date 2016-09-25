@@ -1,8 +1,6 @@
 myApp.controller("addController",['$scope', '$http',function($scope,$http){
   console.log("in addController");
-  var myApp = angular.module('myApp', []);
   $scope.addNewPet = function(){
-
     var newPet ={
       pet_name: $scope.petName,
       pet_species: $scope.petSpecies,
@@ -13,9 +11,13 @@ myApp.controller("addController",['$scope', '$http',function($scope,$http){
       method: 'POST',
       url: '/addPet',
       data: newPet
-
     }).then(function(response){
       console.log('returned from server ', response);
-    });
+      //empty input fields
+      $scope.petName="";
+      $scope.petSpecies="";
+      $scope.petAge="";
+      $scope.url="";
+    })//end return
   };//end addNewPet
 }]);//end addController
