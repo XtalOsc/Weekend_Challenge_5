@@ -14,6 +14,7 @@ mongoose.connect(mongoURI);
 
 app.set("port", (process.env.PORT || 8080));
 
+//set up server
 app.get("/", function(req,res){
   console.log("Here is the property: ", req.params[0]);
   var file = req.params[0] || "/views/index.html";
@@ -26,6 +27,7 @@ app.listen(app.get("port"), function(){
 
 app.use( express.static('public'));
 
+//add pet to database
 app.post('/addPet', function(req,res){
   console.log('in addPet');
 
@@ -47,6 +49,7 @@ app.post('/addPet', function(req,res){
   });//end newPet save
 });//end addPet
 
+//view all pets
 app.get('/viewAll', function(req, res) {
   Pet.find({}, function(err, petResults) {
     if(err){
@@ -59,3 +62,10 @@ app.get('/viewAll', function(req, res) {
     }//end else
   });//end pet find
 });//end viewAll
+
+//delete a pet
+app.delete('/deletePet/:id', function(req,res){
+  console.log("req.params.id",req.params.id);  Pet.find({_id:req.params.id}).remove(function(err,result){
+    res.send(result);
+  });//end function
+});//end deletePet

@@ -11,4 +11,14 @@ myApp.controller("petController",["$scope","$http",function($scope,$http){
     })//end return
   };//end function
   $scope.viewPets();
+
+  $scope.deletePet = function(){
+    $http({
+      method: 'Delete',
+      url: '/deletePet/'+ this.pet._id
+    }).then(function(response){
+      console.log('returned from server ', response);
+      $scope.viewPets();
+    })//end return
+  };//end function
 }]);//end petController

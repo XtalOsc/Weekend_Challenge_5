@@ -9,8 +9,6 @@ var petSchema = new Schema({
   url: String
 });
 
-// users is the name of the collection in the database
-// WARNING will lowercase and pluralize collection name
 var Pet = mongoose.model('pets', petSchema);
 
 module.exports = Pet;

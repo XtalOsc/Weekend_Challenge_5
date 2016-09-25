@@ -1,6 +1,7 @@
 myApp.controller("addController",['$scope', '$http',function($scope,$http){
   console.log("in addController");
   $scope.addNewPet = function(){
+    //add new pet object
     var newPet ={
       pet_name: $scope.petName,
       pet_species: $scope.petSpecies,

@@ -3,6 +3,7 @@
   <p ng-repeat='pet in pets'>
     <img class="resize" src="{{pet.url}}">
     <br>
-    {{pet.pet_species}} named {{ pet.pet_name }} is {{pet.age}} years old
+    {{pet.pet_species}} named {{ pet.pet_name }} Age: {{pet.age}}
+    <button ng-click='deletePet()'>Delete</button>
   </p>
 </div>
